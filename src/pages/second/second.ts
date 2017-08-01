@@ -15,9 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SecondPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  message: string;
+
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
+    this.message = this.navParams.get('message');
+    // alert(this.message);
+  }
+  // goBack() {
+  //   this.navCtrl.pop();
+  // }
+
+  toThirdPage() {
+    this.navCtrl.push('ThirdPage');
   }
 
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SecondPage');
   }

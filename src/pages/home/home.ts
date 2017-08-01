@@ -15,15 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  constructor(private navCtrl: NavController, private navParams: NavParams) {
   }
 
   toSecondPage() {
-    this.navCtrl.push('SecondPage');
+    this.navCtrl.push('SecondPage', {
+      message: "Hello from the homepage"
+    });
   }
 
 }
